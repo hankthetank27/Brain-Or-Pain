@@ -1,3 +1,4 @@
+
 console.log('extention has loaded')
 
 // function show_prompt() {
@@ -8,47 +9,54 @@ console.log('extention has loaded')
 // }
 
 const divs = document.getElementsByTagName('div')
-const all = document.getElementsByTagName('*')
 
 let degLevel = 1
-
 
 function degrade (num) {
   let pos = 1;
   for (let i = 0; i < divs.length; i++){
-    divs[i].style.boxShadow = `1px solid black`
-    divs[i].style.borderRadius = `${num}%`
-    divs[i].animate(
-      [
-        { transform: `rotate(0) translate3D(-${num}%, -${num}%, 0)`, color: '#000' },
-        { color: '#431236', offset: 0.3 },
-        { transform: `rotate(${num}deg) translate3D(-${num}%, -${num}%, 0)`, color: '#000' }
-      ], {
-        duration: 40000,
-        iterations: Infinity
-      })
-
-    // let id = setInterval(move, 1000)
-    // function move (){
-    //   console.log(divs[i].style.top )
-    //   let current = Number(divs[i].style.top.replace('px', ''))
-    //   pos *= 2;
-    //   divs[i].style.top = (current + pos) + 'px';
-    // }
-
+    if (i % 2 === 0){
+      divs[i].animate(
+        [
+          { transform: `rotate(0) translate3D(-${.5}%, -${.5}%, 0)`, color: '#000' },
+          { color: '#431236', offset: 0.3 },
+          { transform: `rotate(${360}deg) translate3D(-${.5}%, -${.5}%, 0)`, color: '#000' }
+        ], {
+          duration: 10000000,
+          iterations: Infinity
+        })
+    }
+    else {
+      divs[i].animate(
+        [
+          { transform: `rotate(360deg) translate3D(${.5}%, ${.5}%, 0)`, color: '#000' },
+          { color: '#431236', offset: 0.3 },
+          { transform: `rotate(0) translate3D(${.5}%, ${.5}%, 0)`, color: '#000' }
+        ], {
+          duration: 10005000,
+          iterations: Infinity
+        })
+    }
 
   }
 }
+
 degrade(degLevel)
 
-// for (let i = 0; i < all.length; i++){
-//   all[i].style.boxShadow = '';
-//   all[i].style.borderRadius = '0%';
-//   all[i].style.fontFamily = 'Times New Roman';
-// }
+function degradeBack (num) {
+  for (let i = 0; i < divs.length; i++){
+    divs[i].cancel()
+  }
+}
 
-//show_prompt();
+setTimeout(degradeBack(degLevel), 10000)
 
+
+
+
+function submitAnswer() {
+    alert("TESTTT'");
+}
 
 
 
