@@ -4,16 +4,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brain Or Pain</title>
+  <script src="Contents.js"></script>
+  <style>
+    body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+* {
+   box-sizing: border-box;
+}
+form {
+   display: flex;
+   flex-flow: row wrap;
+   align-items: center;
+}
+form label {
+   margin: 5px 10px 5px 0;
+}
+form input {
+   margin: 5px 10px 5px 0;
+   padding: 10px;
+}
+form button {
+   padding: 10px 20px;
+   font-size: 20px;
+   background-color: rgb(39, 22, 141);
+   border: 1px solid #ddd;
+   color: white;
+   cursor: pointer;
+   font-weight: bolder;
+   border-radius: 4px;
+}
+form button:hover {
+   background-color: rgb(113, 65, 225);
+}
+@media (max-width: 800px) {
+   form input {
+      margin: 10px 0;
+   }
+   form {
+      flex-direction: column;
+      align-items: stretch;
+   }
+}
+  </style>
+  <!-- <script src="popup.js"></script> -->
 </head>
-<body>
-    <h1>Brain Or Pain</h1>
-    <h2>What is the answer to this question?</h2>
+  <title>Brain Or Pain</title>
+<body style="background-color: rgb(75, 73, 73); border: 2px seagreen; padding: 1px">
+    <h1 style="color: rgba(255, 0, 0, 0.612); font-size: 60px; font: Stencil Std, fantasy; text-align: center;">Brain Or Pain</h1>
+    <h2 class="question">What is the answer to this question?</h2>
     <div>
-      <input type="text" id="answer_field" placeholder="Input Answer" />
-      <input type = "button" onclick = "submitAnswer()" value = "Submit!">
+      <form id="buttonForQuestion" autocomplete="off" >
+        <input type="text" id="answer_field" placeholder="Input Answer" />
+        <input type ="submit" value = "Submit!">
+      </form>
     </div>
-    <script type = "text/javascript" src="Contents.js"></script>
 </body>
 
 </html>
