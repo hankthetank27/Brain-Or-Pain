@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     {'What does CPU stand for?': 'Central Processing Unit'},
     {'What does WWW stand for?': 'World Wide Web'},
     {'What HTML stand for?': 'Hypertext Markup Language'},
-    {'What is Will Sentance\'s favorite candy?': 'Twin Snakes'},
     {'Who killed Han Solo?': 'Kylo Ren'}
   ]
 
